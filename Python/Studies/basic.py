@@ -1,5 +1,6 @@
 #Libs usadas
 import math
+import random
 
 #> Nível Básico
 
@@ -119,6 +120,42 @@ def CalculoRaiz():
     else:
         print("A equação não possui raízes reais.")
 
+def Hypotenuse():
+    a = int(input("Digite o valor do cateto a: "))
+    b = int(input("Digite o valor do cateto b: "))
+    c = (a**2 + b**2)**0.5
+    print(f"O valor da hipotenusa é {c}")
+
+def currency():
+    #Crie um programa currency.py que pergunte ao usuário o valor que ele tem em pesos, soles e reais e calcule o total em USD.
+    pesos = float(input("Digite o valor em pesos: "))
+    soles = float(input("Digite o valor em soles: "))
+    reais = float(input("Digite o valor em reais: "))
+    total = pesos*0.0011 + soles*0.28 + reais*0.18
+    print(f"O total em USD é {total:.2f}")
+
+def CaraCoroa():
+    num = random.randint(0,1)
+    if num > 0.5:
+        print('Cara')
+    else:
+        print('coroa')
+
+def bola8():
+    pergunta = input('o que te preocupas?:      ')
+    respostas = ["Sim, Definitivamente", "Sem dúvidas", "Responder nebuloso, tente novamente.", "Pergunte novamente mais tarde.", 'Melhor não contar agora', 'Minhas fontes dizem que não.', 'Perspectiva não tão boa.', 'Muito duvidoso', 'Melhor não', 'Definitivamente não' ]
+    print('Bola 8: ', random.choice(respostas))
+
+def cyclone():
+    altura = int(input('qual sua altura em cm?: '))
+    credito = int(input('quantos créditos você tem?'))
+
+
+
+
+
+
+
 # Avaliações Práticas
 
 def Avaliacao_Pratica_1A():
@@ -176,5 +213,5 @@ def Avaliacao_Pratica_1D():
     print(f"O peso ideal para uma pessoa do sexo {sexo} com altura {altura} é {peso_ideal:.2f} kg")
 
 #Run
-CalculoRaiz()
+bola8()
 
