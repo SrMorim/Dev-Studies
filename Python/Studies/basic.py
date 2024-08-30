@@ -127,7 +127,7 @@ def Hypotenuse():
     print(f"O valor da hipotenusa é {c}")
 
 def currency():
-    #Crie um programa currency.py que pergunte ao usuário o valor que ele tem em pesos, soles e reais e calcule o total em USD.
+#Crie um programa currency.py que pergunte ao usuário o valor que ele tem em pesos, soles e reais e calcule o total em USD.
     pesos = float(input("Digite o valor em pesos: "))
     soles = float(input("Digite o valor em soles: "))
     reais = float(input("Digite o valor em reais: "))
@@ -148,12 +148,80 @@ def bola8():
 
 def cyclone():
     altura = int(input('qual sua altura em cm?: '))
-    credito = int(input('quantos créditos você tem?'))
+    credito = int(input('quantos créditos você tem?: '))
+
+    if (credito >= 10 and altura >= 137):
+        print('Aproveite o passeio!') 
+    elif (credito >= 10 and altura <=136):
+        print('Você não é alto o suficiente para entrar')
+    elif (credito <= 9 and altura >= 137):
+        print('Você não tem créditos suficientes')
+    else:
+        print('nenhum dos requisitos')
+
+def ChapeuSeletor():
+    #Casas
+    grifinoria = 0
+    cornival = 0
+    lufalufa = 0
+    sonserina = 0
+#Questão 1
+    print('Q1)Voce gosta do amanhecer ou crepúsculo?\n1)Amanhecer\n2)Crepúsculo')
+    rq1 = int(input('Escolha: '))
+
+    if rq1 == 1:
+        grifinoria += 1
+        cornival += 1
+    elif rq1 == 2:
+        lufalufa += 1
+        sonserina += 1
+    else:
+        print('entrada inválida')
+
+    print('')
+# Questão 2
+    print('Q2) Quando eu morrer, quero que as pessoas se lembrem de mim como:\n1)O bom\n2)O Grande\n3)O Sábio\n4)O Ousado')
+    rq2 = int(input('Escolha: '))
+
+    if rq2 == 1:
+        lufalufa += 2
+    elif rq2 == 2:
+        sonserina += 2
+    elif rq2 == 3:
+        cornival += 2
+    elif rq2 == 4:
+        grifinoria += 2
+
+    print('')
+#Questão3
+    print('Q3) Qual tipo de instrumento mais agrada ao seu ouvido?\n1)O Violino\n2)A Trombeta\n3)O Piano\n4)O Tambor')
+    rq3 = int(input('Escolha: '))
+
+    if rq3 == 1:
+        sonserina += 4
+    elif rq3 == 2:
+        lufalufa += 4
+    elif rq3 == 3:
+        cornival += 4 
+    elif rq3 == 4:
+        grifinoria += 4
+
+#Ponturação máxima
+    destino = max(grifinoria, sonserina, lufalufa, cornival)
+    print(grifinoria, sonserina, lufalufa, cornival)
+    if grifinoria == destino:
+        print('sua casa é grifinória')
+    elif sonserina == destino:
+        print('sua casa é sonserina')
+    elif cornival == destino:
+        print('sua casa é cornival')
+    else:
+        print('sua casa é lufa-lufa')
+    
 
 
-
-
-
+#Run
+ChapeuSeletor()
 
 
 # Avaliações Práticas
@@ -211,7 +279,4 @@ def Avaliacao_Pratica_1D():
         return
 
     print(f"O peso ideal para uma pessoa do sexo {sexo} com altura {altura} é {peso_ideal:.2f} kg")
-
-#Run
-bola8()
 
