@@ -218,10 +218,31 @@ def ChapeuSeletor():
     else:
         print('sua casa é lufa-lufa')
     
+def EnterPin():
+    senha = str(input('Digite a Senha: '))
 
+    while senha != "sakai":
+        print('senha incorreta, Digite novamente')
+        senha = str(input('Digite a senha: '))
+    if senha == "sakai":
+        print('Acesso liberado!')
+
+def Adivinhe():
+    Adivinhe = 0
+    descubra = int(input('qual o número?: '))
+
+    while descubra != 123:
+        print('tente de novo!')
+        descubra = int(input('qual o número?: '))
+        if descubra <= 122:
+            print('mais alto')
+        elif descubra >= 124:
+            print('mais baixo')
+        elif descubra == 123:
+            print('Achou o número!')
 
 #Run
-ChapeuSeletor()
+Adivinhe()
 
 
 # Avaliações Práticas
