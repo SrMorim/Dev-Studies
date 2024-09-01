@@ -165,7 +165,7 @@ def ChapeuSeletor():
     cornival = 0
     lufalufa = 0
     sonserina = 0
-#Questão 1
+    #Questão 1
     print('Q1)Voce gosta do amanhecer ou crepúsculo?\n1)Amanhecer\n2)Crepúsculo')
     rq1 = int(input('Escolha: '))
 
@@ -179,7 +179,7 @@ def ChapeuSeletor():
         print('entrada inválida')
 
     print('')
-# Questão 2
+    # Questão 2
     print('Q2) Quando eu morrer, quero que as pessoas se lembrem de mim como:\n1)O bom\n2)O Grande\n3)O Sábio\n4)O Ousado')
     rq2 = int(input('Escolha: '))
 
@@ -193,7 +193,7 @@ def ChapeuSeletor():
         grifinoria += 2
 
     print('')
-#Questão3
+    #Questão3
     print('Q3) Qual tipo de instrumento mais agrada ao seu ouvido?\n1)O Violino\n2)A Trombeta\n3)O Piano\n4)O Tambor')
     rq3 = int(input('Escolha: '))
 
@@ -206,7 +206,7 @@ def ChapeuSeletor():
     elif rq3 == 4:
         grifinoria += 4
 
-#Ponturação máxima
+    #Ponturação máxima
     destino = max(grifinoria, sonserina, lufalufa, cornival)
     print(grifinoria, sonserina, lufalufa, cornival)
     if grifinoria == destino:
@@ -241,12 +241,15 @@ def Adivinhe():
         elif descubra == 123:
             print('Achou o número!')
 
+
+
+
 #Run
 Adivinhe()
 
 
 # Avaliações Práticas
-
+#AV1
 def Avaliacao_Pratica_1A():
 #A) Implemente o programa que calcule o volume de uma esfera de raio R. O usuário fornecerá o dado necessário.
     raio = float(input('Digite o raio R : '))
@@ -301,3 +304,51 @@ def Avaliacao_Pratica_1D():
 
     print(f"O peso ideal para uma pessoa do sexo {sexo} com altura {altura} é {peso_ideal:.2f} kg")
 
+#AV2
+def Avaliacao_Pratica_2A():
+    valor1 = float(input("Insira o primeiro valor: "))
+    valor2 = float(input("Insira o segundo valor: "))
+    valor3 = float(input("Insira o terceiro valor: "))
+    valormax = max(valor1, valor2, valor3)
+    print("O maior valor é:", valormax)
+
+def Avaliacao_Pratica_2B():
+    valor1 = float(input("Insira o primeiro valor: "))
+    valor2 = float(input("Insira o segundo valor: "))
+    valor3 = float(input("Insira o terceiro valor: "))
+
+    if valor1 >= valor2 and valor1 >= valor3:
+        valormax = valor1
+    elif valor2 >= valor1 and valor2 >= valor3:
+        valormax = valor2
+    else:
+        valormax = valor3
+    print("O maior valor é:", valormax)
+
+def Avaliacao_Pratica_2C():
+    print('''
+░█▀▀░█▀█░█░░░█▀▀░█░█░█░░░█▀█░█▀▄░█▀█░█▀▄░█▀█
+░█░░░█▀█░█░░░█░░░█░█░█░░░█▀█░█░█░█░█░█▀▄░█▀█
+░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀░▀░▀
+''')
+    print('Menu:\n[1]Somar\n[2]Subtrair\n[3]Multiplicar\n[4]Dividir\n[5]Sair')
+    escolha = int(input('Escolha: '))
+
+    if escolha == 1:
+        n1 = float(input('Insira o primeiro valor: '))
+        n2 = float(input('Insira o segundo valor: '))
+        print('Resultado:', n1 + n2)
+    elif escolha == 2:
+        n1 = float(input('Insira o primeiro valor: '))
+        n2 = float(input('Insira o segundo valor: '))
+        print('Resultado:', n1 - n2)
+    elif escolha == 3:
+        n1 = float(input('Insira o primeiro valor: '))
+        n2 = float(input('Insira o segundo valor: '))
+        print('Resultado:', n1 * n2)
+    elif escolha == 4:
+        n1 = float(input('Insira o primeiro valor: '))
+        n2 = float(input('Insira o segundo valor: '))
+        print('Resultado:', n1 / n2)
+    elif escolha == 5:
+        print('bye bye')
