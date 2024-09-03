@@ -82,7 +82,16 @@ function Currency(){
   console.log('Você possui:', totalusd, 'em dolar')
 }
 
+function CaraCoroa(){
+  let num = Math.random
+  
+  if (num > 0.5){
+    console.log('Cara')
+  }else{
+    console.log('Coroa')
+  }
+}
 
 
 // Run
-Currency();
+CaraCoroa();
