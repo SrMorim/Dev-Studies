@@ -1,3 +1,5 @@
+# Scripts em Python para registrar meu nível de aprendizado em um só arquivo.
+
 #Libs usadas
 import math
 import random
@@ -126,7 +128,7 @@ def Hypotenuse():
     c = (a**2 + b**2)**0.5
     print(f"O valor da hipotenusa é {c}")
 
-def currency():
+def Currency():
 #Crie um programa currency.py que pergunte ao usuário o valor que ele tem em pesos, soles e reais e calcule o total em USD.
     pesos = float(input("Digite o valor em pesos: "))
     soles = float(input("Digite o valor em soles: "))
