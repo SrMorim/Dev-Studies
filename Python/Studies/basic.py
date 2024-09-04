@@ -272,8 +272,11 @@ def FizzBuzz():
         else:
             print(i)
 
+
+
+
 #Run
-FizzBuzz()
+Adivinhe()
 
 
 # Avaliações Práticas
