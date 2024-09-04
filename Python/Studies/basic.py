@@ -243,6 +243,24 @@ def Adivinhe():
         elif descubra == 123:
             print('Achou o número!')
 
+def AdivinheLimitado():
+    adivinhe = 0
+    tentativas = 0
+    numero = random.randint(1, 100)
+
+    while (adivinhe != numero and tentativas != numero):
+        adivinhe = int(input('adivinhe o número: '))
+        tentativas += 1
+        if tentativas == 11:
+            print('acabou as tentativas')
+            break
+        elif adivinhe > numero:
+            print('mais baixo')
+        elif adivinhe < numero:
+            print('mais alto')
+        elif adivinhe == numero:
+            print('acertou!')
+
 def Detenção():
     for aluno in range(100):
         print('não usar snapchat em sala', aluno)
