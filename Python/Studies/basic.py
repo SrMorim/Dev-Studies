@@ -243,11 +243,37 @@ def Adivinhe():
         elif descubra == 123:
             print('Achou o número!')
 
+def Detenção():
+    for aluno in range(100):
+        print('não usar snapchat em sala', aluno)
 
+def Concatenar():
+    #Concatenação de String
+    for i in range(5):
+        print('a quadrado de: ' + str(i) + ' is ' + str(i*i))
 
+def Interpolação():
+    #Interpolar String
+    for i in range(5):
+        print(f'O quadrado de {i} é {i*i}')
+
+def GarrafasDCerveja():
+    for ngarrafa in range(99, 0, -1):
+        print(f'{ngarrafa} garrafas de cerveja na parede\n{ngarrafa} Garrafas de cerveja\nPegue uma, passe a diante')
+
+def FizzBuzz():
+    for i in range(1, 101):
+        if i % 5 == 0 and i % 3 == 0:
+            print('FizzBuzz')  
+        elif i % 5 == 0:
+            print('Buzz')
+        elif i % 3 == 0:
+            print('Fizz')
+        else:
+            print(i)
 
 #Run
-Adivinhe()
+FizzBuzz()
 
 
 # Avaliações Práticas

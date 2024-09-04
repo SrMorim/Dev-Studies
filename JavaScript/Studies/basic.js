@@ -2,6 +2,7 @@
 Scripts em JavaScript para registrar meu nível de aprendizado em um só arquivo.
 */
 
+
 //> Nível Básico
 function FirstCodeJS() {
   console.log("Hello World!");
