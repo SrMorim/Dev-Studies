@@ -24,76 +24,118 @@ def GamesOptions():
             break
 
 def GuessNumberGame():
-    import random
-    global GTNScore
+    while True:
+        print('''
+░█▀▀░█░█░█▀▀░█▀▀░█▀▀░░░█▀█░█░█░█▄█░█▀▄░█▀▀░█▀▄
+░█░█░█░█░█▀▀░▀▀█░▀▀█░░░█░█░█░█░█░█░█▀▄░█▀▀░█▀▄
+░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░░▀░▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀
+            Guess the number!
+              ''')
+        os.system('cls' if os.name == 'nt' else 'clear')
+        import random
+        global GTNtotal
 
-    guess = 0
-    number = random.randint(1,150)
-    point = 100
-    attempts = 10
-    GTNScore = point
+        guess = 0
+        number = random.randint(1, 100)
+        point = 100
+        descpoint = 0
+        GTNtotal = point - descpoint
+        attempts = 10
 
-    input('You only have 10 attempts, as you make more mistakes, the discounted score will be higher ')
-    input('Are you ready???')
+        input('You only have 10 attempts, as you make more mistakes, the discounted score will be higher, number between 1 and 100.')
+        input('Are you ready???')
 
-    while guess != number:
-        guess = int(input("What's the number?: "))
-        attempts -= 1
-        print(number)
-        
-        if attempts == 0 or point == 0:
-            input('Game Over!')
+        while guess != number:
+            guess = int(input("What's the number?: "))
+            attempts -= 1
+            
+            if attempts == 0:
+                print('The number was:', number)
+                input('Game Over!')
+                GamesOptions()
+                break
+            
+            if guess > number:
+                print('less')
+                descpoint += 2
+            elif guess < number:
+                print('more')
+                descpoint += 2
+
+            if attempts <= 6:
+                if guess > number:
+                    print('less')
+                    descpoint += 5
+                elif guess < number:
+                    print('more')
+                    descpoint += 5
+
+            if attempts <= 4:
+                if guess > number:
+                    print('less')
+                    descpoint += 10
+                elif guess < number:
+                    print('more')
+                    descpoint += 10
+
+            GTNtotal = point - descpoint
+            print(f"Points: {GTNtotal}, Attempts left: {attempts}")
+
+        if guess == number:
+            print('Congrats, you found the number!\nYour final score:', GTNtotal)
+            input('Continue?')
+
             GamesOptions()
             break
         
-        if guess > number:
-            print('less')
-            point -= 1
-            print(point)
-            print(attempts)
-        elif guess < number:
-            print('more')
-            point -= 1
-            print(point)
-            print(attempts)
+def HangmanGame():
+    import random
+    global HMpoint
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('''
+    ░█░█░█▀█░█▀█░█▀▀░█▄█░█▀█░█▀█
+    ░█▀█░█▀█░█░█░█░█░█░█░█▀█░█░█
+    ░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀░▀
+    Welcome to Hangman Game!
+    ''')
 
-        if guess > number and attempts <= 6:
-            print('less')
-            point -= 5
-            print(point)
-            print(attempts)
-        elif guess < number and attempts <= 6:
-            print('more')
-            point -= 5
-            print(point)
-            print(attempts)
+        word_list = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape']
+        word = random.choice(word_list)
+        guessed_letters = []
+        attempts = 6
+        HMpoint = 100
 
-        if guess > number and attempts <= 4:
-            print('less')
-            point -= 10
-            print(point)
-            print(attempts)
-        elif guess < number and attempts <= 4:
-            print('more')
-            point -= 10
-            print(point)
-            print(attempts)
+        while attempts > 0:
+            print("\nAttempts left:", attempts)
+            print("Guessed letters:", guessed_letters)
+            print("Word:", ''.join([letter if letter in guessed_letters else '_' for letter in word]))
 
-    if guess == number:
-        print('Congrats, you found the number!\nyour final score:', point)
-        input('Continue?')
+            guess = input("Guess a letter: ").lower()
+
+            if guess in guessed_letters:
+                print("You already guessed that letter!")
+            elif guess.isalpha() and len(guess) == 1:
+                guessed_letters.append(guess)
+                if guess in word:
+                    print("Correct guess!")
+                    if all(letter in guessed_letters for letter in word):
+                        print("Congratulations, you guessed the word!")
+                        break
+                else:
+                    print("Wrong guess!")
+                    attempts -= 1
+                    HMpoint -= 10
+            else:
+                print("Invalid input! Please enter a single letter.")
+
+        if attempts == 0:
+            print("Game over! The word was:", word)
+
+        print("Total points:", HMpoint)
+        input("Press Enter to continue...")
         GamesOptions()
-        
-
-        
-
-
-
-
-
-
-
-
+        break
 
 
 
@@ -104,25 +146,35 @@ def GuessNumberGame():
 
 
 def TotalScore():
-    print("""
-░█▀▀░█▀▀░█▀█░█▀▄░█▀▀
-░▀▀█░█░░░█░█░█▀▄░█▀▀
-░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
-See you total score here.
-""")
-    print(f'Guess the number:{GTNScore}\nTotal:{GTNScore}')
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("""
+    ░█▀▀░█▀▀░█▀█░█▀▄░█▀▀
+    ░▀▀█░█░░░█░█░█▀▄░█▀▀
+    ░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
+    See you total score here.
+    """)
+        print('_______________________________')
+        print('Guess the number:', GTNtotal)
+        print('Hungman Game:', HMpoint)
+        print('_______________________________')
+        print('total:', GTNtotal + HMpoint)
+        input('')
+        TerminalMenu()
+        break
 
 
 #Welcome menu!
 def TerminalMenu():
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(''' 
         ░▀█▀░█▀▀░█▀▄░█▄█░▀█▀░█▀█░█▀█░█░░░░░█▀▀░█▀█░█▄█░█▀▀░█
         ░░█░░█▀▀░█▀▄░█░█░░█░░█░█░█▀█░█░░░░░█░█░█▀█░█░█░█▀▀░▀
         ░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀
         Play mini-games to earn points! How far can you go?
         ''')
-        print('[1]Start\n[2]Score\n[0]Exit')
+        print('[1]Start\n[2]Score (select after played all games)\n[0]Exit')
         choose = int(input('>>> '))
 
         if choose == 1:
