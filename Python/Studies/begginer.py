@@ -290,11 +290,16 @@ def FizzBuzz():
         else:
             print(i)
 
+def Mercado():
+    Higiene = ['Detergente', 'Lysoform', 'Sabão em pó', 'Shampoo', 'Condicionador', 'Sabonete de banho', '...']
+    print(Higiene[2: 5])
 
-
+def Inventory():
+    lego_parts = [8980, 7323, 5343, 82700, 92232, 1203, 7319, 8903, 2328, 1279, 679, 589]
+    print(max(lego_parts))
 
 #Run
-AdivinheLimitado()
+Inventory()
 
 
 # Avaliações Práticas
