@@ -298,8 +298,27 @@ def Inventory():
     lego_parts = [8980, 7323, 5343, 82700, 92232, 1203, 7319, 8903, 2328, 1279, 679, 589]
     print(max(lego_parts))
 
+def Enumerar():
+    for i in enumerate(1):
+        print(i)
+
+def Playlist():
+    playlist = ['música1', 'música2', 'música3', 'música4', 'música5', 'música6', 'música7', 'música8', 'música9', 'música10']
+    for i in playlist:
+        print(i)
+
+
+def Fortune():
+    biscoito = ["Don't pursue happiness – create it", "All things are difficult before they are easy.", "The early bird gets the worm, but the second mouse gets the cheese.", "Someone in your life needs a letter from you.", "Don't just think. Act!" ]
+    sorte = random.choice(biscoito)
+    print(sorte)
+
+
+
+
 #Run
-Inventory()
+
+add()
 
 
 # Avaliações Práticas
