@@ -307,18 +307,37 @@ def Playlist():
     for i in playlist:
         print(i)
 
-
 def Fortune():
     biscoito = ["Don't pursue happiness – create it", "All things are difficult before they are easy.", "The early bird gets the worm, but the second mouse gets the cheese.", "Someone in your life needs a letter from you.", "Don't just think. Act!" ]
     sorte = random.choice(biscoito)
     print(sorte)
 
+def Restaurante():
+    class restaurant:
+        nome = ""
+        categoria = ""
+        avaliacao = 0.0
+        entrega = False
+    bobs = restaurant()
+    bobs.nome = 'bobespoja'
+    bobs.categoria = 'Hamburguer'
+    bobs.avaliacao = 5.0
+    bobs.entrega = True
+    print(vars(bobs))
 
+    donald = restaurant()
+    donald.nome = 'McDonalds'
+    donald.categoria = 'Hambuerguer'
+    donald.avaliacao = '4.5'
+    donald.entrega = True
+    print(vars(donald))
+
+#>Próximo nível
 
 
 #Run
+Restaurante()
 
-add()
 
 
 # Avaliações Práticas
