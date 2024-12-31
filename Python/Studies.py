@@ -533,3 +533,14 @@ def Avaliacao_Pratica_3C():
     print("Média aritmética dos números pares:", average_even)
     print("Média aritmética dos números ímpares:", average_odd)
 
+def Aprendendo__init():
+    class student:
+        def __init__(self, nome, ano, turma, matriculado):
+            self.nome = nome
+            self.ano = ano
+            self.turma = turma
+            self.matricula = matriculado
+        
+    daniel = student('Daniel', '8 ano', '8A', True )
+    Felipe = student('Felipe Monteiro', '1 semestre', "Ciencias da computacao", True)
+
